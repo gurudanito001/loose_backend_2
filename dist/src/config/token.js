@@ -7,3 +7,4 @@ exports.tokenTypes = {
     RESET_PASSWORD: 'resetPassword',
     VERIFY_EMAIL: 'verifyEmail',
 };
+//# sourceMappingURL=token.js.map

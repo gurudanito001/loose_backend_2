@@ -49,3 +49,4 @@ const getSanitzedConfig = (config) => {
 const config = getConfig();
 const sanitizedConfig = getSanitzedConfig(config);
 exports.default = sanitizedConfig;
+//# sourceMappingURL=config.js.map

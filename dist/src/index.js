@@ -10,3 +10,4 @@ app_1.default.listen(port, () => {
     console.log(`[server]: Local server running at https://localhost:${port}`);
 });
 exports.default = app_1.default;
+//# sourceMappingURL=index.js.map

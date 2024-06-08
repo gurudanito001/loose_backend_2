@@ -10,3 +10,4 @@ class ServerError extends Error {
     }
 }
 exports.default = ServerError;
+//# sourceMappingURL=errorService.js.map

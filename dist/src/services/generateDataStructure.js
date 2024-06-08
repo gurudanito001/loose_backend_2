@@ -18,3 +18,4 @@ const structureGenerator = (data) => {
     return structure;
 };
 exports.default = structureGenerator;
+//# sourceMappingURL=generateDataStructure.js.map

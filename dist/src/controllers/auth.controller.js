@@ -21,7 +21,7 @@ const prisma_1 = require("../../lib/prisma");
 // import nodeFetch from "node-fetch";
 const fs_1 = require("fs");
 const path_1 = __importDefault(require("path"));
-const countriesPath = path_1.default.join(process.cwd(), 'app/data/countries.json');
+const countriesPath = path_1.default.join(process.cwd(), 'src/data/countries.json');
 class Controller {
     verifyEmail(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -289,3 +289,4 @@ class Controller {
 }
 const AuthController = new Controller();
 exports.default = AuthController;
+//# sourceMappingURL=auth.controller.js.map

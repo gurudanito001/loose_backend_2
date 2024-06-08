@@ -24,3 +24,4 @@ const doesDataMatchStructure = (data, structure) => {
     return result;
 };
 exports.doesDataMatchStructure = doesDataMatchStructure;
+//# sourceMappingURL=doesDataMatchStructure.js.map

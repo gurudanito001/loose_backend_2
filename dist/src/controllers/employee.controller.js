@@ -59,3 +59,4 @@ class Controller {
 }
 const EmployeeController = new Controller();
 exports.default = EmployeeController;
+//# sourceMappingURL=employee.controller.js.map

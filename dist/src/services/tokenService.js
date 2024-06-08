@@ -132,3 +132,4 @@ exports.decodeToken = decodeToken;
   await saveToken(resetPasswordToken, user.id, expires, tokenTypes.RESET_PASSWORD);
   return token;
 }; */
+//# sourceMappingURL=tokenService.js.map

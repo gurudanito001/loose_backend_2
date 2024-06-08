@@ -14,7 +14,7 @@ import { uploadImage } from "../services/fileService";
 import fs, {readFileSync} from "fs";
 import path from "path";
 
-const countriesPath = path.join(process.cwd(), 'app/data/countries.json');
+const countriesPath = path.join(process.cwd(), 'src/data/countries.json');
 
 class Controller {
 
