@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { hashPassword } from "../services/authServices";
-import {prisma} from "../../lib/prisma";
+import {prisma} from "../lib/prisma";
 
 class Controller {
   public async create(req: Request, res: Response){

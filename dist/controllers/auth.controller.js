@@ -17,7 +17,7 @@ const tokenService_1 = require("../services/tokenService");
 const token_1 = require("../config/token");
 // import config from "../config/config";
 const generateVerificationCode_1 = require("../services/generateVerificationCode");
-const prisma_1 = require("../../lib/prisma");
+const prisma_1 = require("../lib/prisma");
 // import nodeFetch from "node-fetch";
 const fs_1 = require("fs");
 const path_1 = __importDefault(require("path"));

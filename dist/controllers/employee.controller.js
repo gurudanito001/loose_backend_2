@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const authServices_1 = require("../services/authServices");
-const prisma_1 = require("../../lib/prisma");
+const prisma_1 = require("../lib/prisma");
 class Controller {
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {

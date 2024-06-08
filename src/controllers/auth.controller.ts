@@ -7,7 +7,7 @@ import { generateToken } from "../services/tokenService";
 import { tokenTypes } from "../config/token";
 // import config from "../config/config";
 import { generateRandomCode } from "../services/generateVerificationCode";
-import {prisma} from "../../lib/prisma";
+import {prisma} from "../lib/prisma";
 import type { User } from "@prisma/client";
 import { uploadImage } from "../services/fileService";
 // import nodeFetch from "node-fetch";
