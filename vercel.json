@@ -1,6 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "rimraf dist && tsc && npx prisma migrate dev",
+  "build": {
+    "command": "npm run build && npm run start"
+  },
   "builds": [
       {
           "src": "dist/server.js",
