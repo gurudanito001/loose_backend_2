@@ -1,8 +1,7 @@
 {
   "version": 2,
-  "build": {
-    "command": "npm run build && npm run start"
-  },
+  "buildCommand": "npm run build",
+  "devCommand": "npm run start",
   "builds": [
       {
           "src": "dist/server.js",
