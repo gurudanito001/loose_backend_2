@@ -8,7 +8,7 @@ import { tokenTypes } from "../config/token";
 // import config from "../config/config";
 import { generateRandomCode } from "../services/generateVerificationCode";
 import {prisma} from "../lib/prisma";
-import type { User } from "@prisma/client";
+// import type { User } from "@prisma/client";
 import { uploadImage } from "../services/fileService";
 // import nodeFetch from "node-fetch";
 import fs, {readFileSync} from "fs";
@@ -139,7 +139,7 @@ class Controller {
   }
 
   public async register(req: Request, res: Response){
-    let {firstName, lastName, email, password, userType, username, country, gender, profileImage, bio, topics} = req.body as User;
+    let {firstName, lastName, email, password, userType, username, country, gender, profileImage, bio, topics} = req.body;
     try {
       // check if email is verified 
       const emailData = await prisma.email.findFirst({
