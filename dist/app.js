@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 // import config from './config/config';
 const cors_1 = __importDefault(require("cors"));
-//import AuthController from './controllers/auth.controller';
+const auth_controller_1 = __importDefault(require("./controllers/auth.controller"));
 const app = (0, express_1.default)();
 app.use(body_parser_1.default.json({ limit: '50mb' })); // define the size limit
 app.use(body_parser_1.default.urlencoded({ limit: '50mb', extended: true })); // define the size limit
@@ -21,14 +21,14 @@ app.get("/hello", (req, res) => {
     res.send("This is your hello message");
 });
 // AUTH
-/* app.post('/auth/verifyEmail', AuthController.verifyEmail);
-app.post('/auth/resendVerifyCode', AuthController.resendVerificationCode);
-app.post('/auth/confirmVerification', AuthController.confirmVerificationCode);
-app.post('/auth/register', AuthController.register);
-app.post('/auth/login', AuthController.login);
-app.post('/auth/forgotPassword', AuthController.forgotPassword);
-app.post('/auth/resetPassword', AuthController.resetPassword);
-app.get('/auth/getCountries', AuthController.getCountries); */
+app.post('/auth/verifyEmail', auth_controller_1.default.verifyEmail);
+app.post('/auth/resendVerifyCode', auth_controller_1.default.resendVerificationCode);
+app.post('/auth/confirmVerification', auth_controller_1.default.confirmVerificationCode);
+app.post('/auth/register', auth_controller_1.default.register);
+app.post('/auth/login', auth_controller_1.default.login);
+app.post('/auth/forgotPassword', auth_controller_1.default.forgotPassword);
+app.post('/auth/resetPassword', auth_controller_1.default.resetPassword);
+app.get('/auth/getCountries', auth_controller_1.default.getCountries);
 //Employee
 /* app.post('/employee/create', EmployeeController.create);
 app.get('/employee', EmployeeController.getAll);
