@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "buildCommand": "rimraf dist && tsc && npx prisma migrate dev",
   "builds": [
       {
           "src": "dist/server.js",
@@ -12,5 +13,6 @@
           "src": "/(.*)",
           "dest": "dist/server.js"
       }
-  ]
+  ],
+  "build"
 }
