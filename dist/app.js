@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.send("Therapy Application");
 });
 app.get("/hello", (req, res) => {
-    res.send("This is your hello message 111");
+    res.send("This is your hello message");
 });
 // AUTH
 app.post('/auth/verifyEmail', auth_controller_1.default.verifyEmail);
