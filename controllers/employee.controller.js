@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import { hashPassword } from "../services/authServices";
 import {prisma} from "../lib/prisma";
 

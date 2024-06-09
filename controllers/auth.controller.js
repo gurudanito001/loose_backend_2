@@ -1,5 +1,4 @@
 
-import { Request, Response } from "express";
 // import bcrypt, { hash } from 'bcrypt';
 import sendEmail from "../services/sendEmail";
 import { hashPassword, isPasswordMatch } from "../services/authServices";
