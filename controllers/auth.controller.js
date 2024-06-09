@@ -274,4 +274,4 @@ class Controller {
 }
 
 const AuthController = new Controller()
-export default AuthController
+module.exports = AuthController;

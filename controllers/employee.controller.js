@@ -47,4 +47,4 @@ class Controller {
 }
 
 const EmployeeController = new Controller()
-export default EmployeeController
+module.exports = EmployeeController
