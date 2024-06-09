@@ -1,8 +1,8 @@
-import jwt from "jsonwebtoken"
-import moment from "moment";
+const jwt = require("jsonwebtoken");
+const moment  = require("moment");
 //import httpStatus from "http-status";
 // const jwt = require('jwt-simple');
-import config from "../config/config";
+const config  = require("../config/config");
 
 /**
  * Generate token

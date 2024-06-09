@@ -1,4 +1,4 @@
-import structureGenerator from "./generateDataStructure";
+const structureGenerator  = require("./generateDataStructure");
 
 const doesDataMatchStructure = (data, structure) =>{
   let structureKeys = Object.keys(structure);

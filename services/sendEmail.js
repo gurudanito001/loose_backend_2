@@ -1,5 +1,4 @@
-import { Send } from 'express';
-import * as Nodemailer from 'nodemailer';
+const Nodemailer = require('nodemailer');
 
 
 // async..await is not allowed in global scope, must use a wrapper

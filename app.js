@@ -1,8 +1,8 @@
-import express, { Express, Request, Response} from 'express';
-import bodyParser from 'body-parser';
+const express = require('express');
+const bodyParser  = require('body-parser');
 // import config from './config/config';
-import cors from 'cors';
-import AuthController from './controllers/auth.controller';
+const cors  = require('cors');
+const AuthController  = require('./controllers/auth.controller');
 
 
 const app = express();

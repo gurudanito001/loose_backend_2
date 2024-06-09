@@ -1,5 +1,5 @@
-import { hashPassword } from "../services/authServices";
-import {prisma} from "../lib/prisma";
+const { hashPassword }  = require("../services/authServices");
+const {prisma}  = require("../lib/prisma");
 
 class Controller {
    async create(req, res){

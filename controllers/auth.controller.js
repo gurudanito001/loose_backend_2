@@ -1,17 +1,17 @@
 
 // import bcrypt, { hash } from 'bcrypt';
-import sendEmail from "../services/sendEmail";
-import { hashPassword, isPasswordMatch } from "../services/authServices";
-import { generateToken } from "../services/tokenService";
-import { tokenTypes } from "../config/token";
+const sendEmail = require("../services/sendEmail");
+const { hashPassword, isPasswordMatch } = require("../services/authServices");
+const { generateToken } = require("../services/tokenService");
+const { tokenTypes } = require("../config/token");
 // import config from "../config/config";
-import { generateRandomCode } from "../services/generateVerificationCode";
-import {prisma} from "../lib/prisma";
+const { generateRandomCode }  = require("../services/generateVerificationCode");
+const {prisma}  = require("../lib/prisma");
 // import type { User } from "@prisma/client";
-import { uploadImage } from "../services/fileService";
+const { uploadImage } = require("../services/fileService");
 // import nodeFetch from "node-fetch";
-import fs, {readFileSync} from "fs";
-import path from "path";
+const {readFileSync}  = require("fs");
+const path  = require("path");
 
 const countriesPath = path.join(process.cwd(), 'src/data/countries.json');
 
