@@ -2,7 +2,7 @@ const Nodemailer = require('nodemailer');
 
 
 // async..await is not allowed in global scope, must use a wrapper
-export default async function sendEmail({ email, code, message = "verify your email address"  } ) {
+async function sendEmail({ email, code, message = "verify your email address"  } ) {
 
     let transporter = Nodemailer.createTransport({
         name: "www.banjnetdigital.com",  //www.agronigeria.ng

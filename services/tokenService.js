@@ -14,12 +14,12 @@ const config  = require("../config/config");
  */
 
 
-export function generateToken (data) {
+function generateToken (data) {
   
   return jwt.sign(data, config.SECRET, {expiresIn: data.expires});
 };
 
-export function decodeToken(token){
+function decodeToken(token){
   let data = jwt.verify(token, config.SECRET);
   return data;
 }
