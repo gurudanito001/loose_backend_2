@@ -1,15 +1,15 @@
 import bcrypt from 'bcrypt';
 
 
-export async function hashPassword(password, salt = 8) {
+async function hashPassword(password, salt = 8) {
   return bcrypt.hash(password, salt);
 };
 
-export async function isPasswordMatch (providePassword, userPassword) {
+async function isPasswordMatch (providePassword, userPassword) {
   return bcrypt.compare(providePassword, userPassword);
 };
 
-export function generateRandomString (length = 4, digitOnly = true)  {
+function generateRandomString (length = 4, digitOnly = true)  {
   let result = '';
   const characters = digitOnly ? '0123456789' : 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   const charactersLength = characters.length;
@@ -18,3 +18,9 @@ export function generateRandomString (length = 4, digitOnly = true)  {
   }
   return result;
 };
+
+module.exports = {
+  hashPassword,
+  isPasswordMatch,
+  generateRandomString
+}

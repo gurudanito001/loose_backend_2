@@ -1,6 +1,6 @@
 import structureGenerator from "./generateDataStructure";
 
-export const doesDataMatchStructure = (data, structure) =>{
+const doesDataMatchStructure = (data, structure) =>{
   let structureKeys = Object.keys(structure);
   let dataStructure = structureGenerator(data);
   let dataStructureKeys = Object.keys(dataStructure);
@@ -18,4 +18,8 @@ export const doesDataMatchStructure = (data, structure) =>{
   }
 
   return result
+}
+
+module.exports = {
+  doesDataMatchStructure
 }

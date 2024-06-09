@@ -12,7 +12,7 @@ cloudinary.config({
 });
 
 
-export const uploadImage = async ({publicId="on8x0w6l", data}) => {
+const uploadImage = async ({publicId="on8x0w6l", data}) => {
 
   // Use the uploaded file's name as the asset's public ID and 
   // allow overwriting the asset with new versions
@@ -45,7 +45,7 @@ res.then((data: any) => {
 
 
 // Generate 
-export const getAssetInfo = async (publicId) => {
+const getAssetInfo = async (publicId) => {
 
   // Return colors in the response
   const options = {
@@ -68,3 +68,9 @@ export const getAssetInfo = async (publicId) => {
 // The output url
 // console.log(url);
 // https://res.cloudinary.com/<cloud_name>/image/upload/h_150,w_100/olympic_flag
+
+
+module.exports = {
+  uploadImage,
+  getAssetInfo
+}

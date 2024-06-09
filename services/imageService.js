@@ -52,7 +52,10 @@ export const getAssetInfo = async (publicId) => {
   }
 };
 
-
+module.exports = {
+  uploadImage,
+  getAssetInfo
+}
 
 
 // The output url

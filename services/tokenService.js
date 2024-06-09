@@ -138,3 +138,8 @@ export function decodeToken(token){
 }; */
 
 
+module.exports = {
+  generateToken,
+  decodeToken
+}
+

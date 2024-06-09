@@ -42,4 +42,4 @@ app.delete('/employee/:id', EmployeeController.deleteOne); */
 
 
 
-export default app;
+module.exports = app;

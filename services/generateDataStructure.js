@@ -20,4 +20,5 @@ const structureGenerator = (data) =>{
   return structure
 }
 
-export default structureGenerator;
+
+module.exports = structureGenerator;

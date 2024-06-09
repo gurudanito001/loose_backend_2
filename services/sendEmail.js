@@ -48,3 +48,5 @@ export default async function sendEmail({ email, code, message = "verify your em
     });
 
 }
+
+module.exports = sendEmail;
