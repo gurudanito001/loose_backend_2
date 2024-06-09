@@ -1,11 +1,11 @@
 import bcrypt from 'bcrypt';
 
 
-export async function hashPassword(password: string, salt = 8) {
+export async function hashPassword(password, salt = 8) {
   return bcrypt.hash(password, salt);
 };
 
-export async function isPasswordMatch (providePassword: string, userPassword: string) {
+export async function isPasswordMatch (providePassword, userPassword) {
   return bcrypt.compare(providePassword, userPassword);
 };
 

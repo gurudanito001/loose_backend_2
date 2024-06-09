@@ -12,12 +12,7 @@ cloudinary.config({
 });
 
 
-// Upload
-interface props {
-  publicId?: string,
-  data?: string | null | undefined
-}
-export const uploadImage = async ({publicId="on8x0w6l", data}: props) => {
+export const uploadImage = async ({publicId="on8x0w6l", data}) => {
 
   // Use the uploaded file's name as the asset's public ID and 
   // allow overwriting the asset with new versions
@@ -50,7 +45,7 @@ res.then((data: any) => {
 
 
 // Generate 
-export const getAssetInfo = async (publicId: string) => {
+export const getAssetInfo = async (publicId) => {
 
   // Return colors in the response
   const options = {

@@ -3,7 +3,7 @@ import { hashPassword } from "../services/authServices";
 import {prisma} from "../lib/prisma";
 
 class Controller {
-  public async create(req: Request, res: Response){
+   async create(req, res){
     let data = req.body;
     try {
       let hashedPassword = await hashPassword(data.password) 
@@ -17,12 +17,12 @@ class Controller {
           payload: savedData
         })
       }
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async getAll(req: Request, res: Response){
+   async getAll(req, res){
     let data = req.body;
     try {
       let allData = await prisma.user.findMany({
@@ -38,7 +38,7 @@ class Controller {
           payload: allData
         })
       }
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }

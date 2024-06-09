@@ -5,7 +5,7 @@ import cors from 'cors';
 import AuthController from './controllers/auth.controller';
 
 
-const app: Express = express();
+const app = express();
 
 app.use(bodyParser.json({limit: '50mb'})); // define the size limit
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));	// define the size limit

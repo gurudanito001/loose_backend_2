@@ -1,6 +1,6 @@
 
-const deriveDataType = (value: any)=>{
-  let result: any = typeof(value);
+const deriveDataType = (value)=>{
+  let result = typeof(value);
   if(result === "object"){
     if(Array.isArray(value)){
       result = "array";
@@ -9,9 +9,9 @@ const deriveDataType = (value: any)=>{
   return result;
 }
 
-const structureGenerator = (data: any) =>{
+const structureGenerator = (data) =>{
   let dataKeys = Object.keys(data);
-  let structure: any = {}
+  let structure = {}
 
   for (let i = 0; i < dataKeys.length; i++) {
     structure[dataKeys[i]] = deriveDataType(data[dataKeys[i]]);

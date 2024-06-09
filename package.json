@@ -2,22 +2,10 @@
   "name": "loose_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon dist/index.js",
-    "build": "npx prisma migrate dev && rimraf dist && tsc",
-    "ts.check": "tsc --project tsconfig.json",
-    "add-build": "git add dist",
+    "start": "nodemon index.js",
     "test": "mocha -r ts-node/register tests/**/*.spec.ts",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "watch-ts": "tsc -w",
-    "watch-node": "nodemon dist/index.js",
-    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\""
   },
   "keywords": [],
   "author": "",

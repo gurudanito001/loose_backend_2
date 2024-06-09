@@ -1,13 +1,9 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.decodeToken = exports.generateToken = void 0;
-const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+import jwt from "jsonwebtoken"
+import moment from "moment";
 //import httpStatus from "http-status";
 // const jwt = require('jwt-simple');
-const config_1 = __importDefault(require("../config/config"));
+import config from "../config/config";
+
 /**
  * Generate token
  * @param {ObjectId} userId
@@ -16,16 +12,18 @@ const config_1 = __importDefault(require("../config/config"));
  * @param {string} [secret]
  * @returns {string}
  */
-function generateToken(data) {
-    return jsonwebtoken_1.default.sign(data, config_1.default.SECRET, { expiresIn: data.expires });
+
+
+export function generateToken (data) {
+  
+  return jwt.sign(data, config.SECRET, {expiresIn: data.expires});
+};
+
+export function decodeToken(token){
+  let data = jwt.verify(token, config.SECRET);
+  return data;
 }
-exports.generateToken = generateToken;
-;
-function decodeToken(token) {
-    let data = jsonwebtoken_1.default.verify(token, config_1.default.SECRET);
-    return data;
-}
-exports.decodeToken = decodeToken;
+
 /**
  * Save a token
  * @param {string} token
@@ -59,6 +57,9 @@ exports.decodeToken = decodeToken;
 
   return tokenDoc;
 }; */
+
+
+
 /**
  * Verify token and return token doc (or throw an error if it is not valid)
  * @param {string} token
@@ -72,6 +73,7 @@ exports.decodeToken = decodeToken;
   }
   return tokenDoc;
 }; */
+
 /**
  * Generate auth tokens
  * @param {User} user
@@ -94,6 +96,7 @@ exports.decodeToken = decodeToken;
     },
   };
 }; */
+
 /* const generateActionToken = async (user) => {
   const accessTokenExpires = moment().add(config.jwt.accessExpirationMinutes, 'minutes');
   const accessToken = generateToken(user.id, accessTokenExpires, tokenTypes.ACCESS);
@@ -113,6 +116,7 @@ exports.decodeToken = decodeToken;
     },
   };
 }; */
+
 /**
  * Generate reset password token
  * @param {string} email
@@ -132,4 +136,5 @@ exports.decodeToken = decodeToken;
   await saveToken(resetPasswordToken, user.id, expires, tokenTypes.RESET_PASSWORD);
   return token;
 }; */
-//# sourceMappingURL=tokenService.js.map
+
+

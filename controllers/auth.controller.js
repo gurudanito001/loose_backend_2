@@ -18,7 +18,7 @@ const countriesPath = path.join(process.cwd(), 'src/data/countries.json');
 
 class Controller {
 
-  public async verifyEmail(req: Request, res: Response){
+  async verifyEmail(req, res){
     const {email} = req.body;
     try {
       // check if user already exists
@@ -62,12 +62,12 @@ class Controller {
           code: randomCode
         }
       })
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async resendVerificationCode(req: Request, res: Response){
+  async resendVerificationCode(req, res){
     const {email} = req.body;
     try {
       // check if user already exists
@@ -99,12 +99,12 @@ class Controller {
           code: randomCode
         }
       })
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async confirmVerificationCode(req: Request, res: Response){
+  async confirmVerificationCode(req, res){
     const {email, code} = req.body;
     try {
       // fetch email data
@@ -133,12 +133,12 @@ class Controller {
           statusCode: 200,
         })
       }
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async register(req: Request, res: Response){
+   async register(req, res){
     let {firstName, lastName, email, password, userType, username, country, gender, profileImage, bio, topics} = req.body;
     try {
       // check if email is verified 
@@ -171,15 +171,15 @@ class Controller {
         statusCode: 200,
         payload: user
       })
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async login(req: Request, res: Response){
+   async login(req, res){
     let {email, password} = req.body;
     try {
-      let user: any = await prisma.user.findFirst({ where: { email } }); 
+      let user = await prisma.user.findFirst({ where: { email } }); 
       if(!user){
         return res.status(400).json({message: "Email or Password Invalid", status: "error", statusCode: 400,})
       }
@@ -196,15 +196,15 @@ class Controller {
         statusCode: 200,
         payload: {user, token}
       })
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async forgotPassword(req: Request, res: Response){
+   async forgotPassword(req, res){
     let {email} = req.body;
     try {
-      let user: any = await prisma.user.findFirst({where: {email}}) ; 
+      let user = await prisma.user.findFirst({where: {email}}) ; 
       if(!user){
         return res.status(404).json({message: 'User with email does not exist'})
       }
@@ -222,12 +222,12 @@ class Controller {
           code: randomCode
         }
       })
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async resetPassword(req: Request, res: Response){
+   async resetPassword(req, res){
     let {code, email, newPassword} = req.body;
     try {
       const emailData = await prisma.email.findFirst({
@@ -253,12 +253,12 @@ class Controller {
         status: "success",
         statusCode: 200,
       }) 
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }
 
-  public async getCountries(req: Request, res: Response){
+   async getCountries(req, res){
     try {
       const jsonData =  readFileSync(countriesPath)
       const data = JSON.parse(jsonData.toString());
@@ -268,7 +268,7 @@ class Controller {
         statusCode: 200,
         payload: data
       }) 
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({message: error.message})
     }
   }

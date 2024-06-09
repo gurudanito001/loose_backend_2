@@ -1,14 +1,9 @@
 import { Send } from 'express';
 import * as Nodemailer from 'nodemailer';
 
-interface SendEmailParams {
-    email: string,
-    code: number,
-    message?: string,
-    buttonText?: string
-}
+
 // async..await is not allowed in global scope, must use a wrapper
-export default async function sendEmail({ email, code, message = "verify your email address"  }: SendEmailParams ) : Promise<any> {
+export default async function sendEmail({ email, code, message = "verify your email address"  } ) {
 
     let transporter = Nodemailer.createTransport({
         name: "www.banjnetdigital.com",  //www.agronigeria.ng
